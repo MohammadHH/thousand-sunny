@@ -1,0 +1,23 @@
+// design page width & height
+$designWidth: 1600;
+$designHeight: 5588;
+
+$deviceWidth: 1366;
+
+@function getWidth($width) {
+  @return calc($width * $deviceWidth / $designWidth * 1px);
+}
+
+@function getHeight($height, $width) {
+  @return calc(($height * $deviceWidth) / ($width * $designWidth) * 1px);
+}
+
+:root {
+  --header-icon-size: getWidth(44);
+  --btn-width: getWidth(132);
+  --btn-height: getHeight(60, 132);
+  --link-width: getWidth(95);
+  --link-height: getHeight(19, 95);
+  --select-input-width: getWidth(220);
+  --select-input-height: getHeight(52, 220);
+}
